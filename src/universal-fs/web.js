@@ -6,13 +6,14 @@ const appendFile = async (filename, data, cb) => {
   return writeFile(newFileData, data, cb)
 }
 
-const readFile = (filename, options) => {
+const readFile = (filename, options = {}) => {
   if (options.encoding === 'utf8') return readString(filename)
   return readFileWeb(filename)
 }
 const writeFile = async (...args) => {
+  const [name, data, options] = args
   await writeFileWeb(...args)
-  return readFile(args[0])
+  return readFile(name, options)
 }
 const unlink = (...args) => removeFile(...args)
 

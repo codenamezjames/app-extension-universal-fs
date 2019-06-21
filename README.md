@@ -1,16 +1,32 @@
-# app-extension-universal-fs [WIP]
-![official icon](https://img.shields.io/badge/Quasar%201.0-Official%20App%20Extension-blue.svg)
-<a href="https://v1.quasar-framework.org" target="_blank"><img src="https://badge.fury.io/js/%40quasar%2Fquasar-app-extension-universal-fs.svg"></a>
+Quasar App Extension Title <- change name
+===
 
-| Statements | Branches | Functions | Lines |
- |-------|------------|----------|-----------|
- | ![Statements](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") 
+_Be sure to change this readme as appropriate for your app extension._
 
-This is the official Quasar 1.0 App-Extension for universal-fs.
+_Think about the organization of this file and how the information will be beneficial to the user._
 
-## Installation
-IN DEVELOPMENT, DO NOT USE YET.
+> Add a short description of your App Extension. What does it do? How is it beneficial? Why would someone want to use it?
 
+# Install
+```bash
+quasar ext add my-ext <- change name
 ```
-$ quasar ext add @quasar/universal-fs
+Quasar CLI will retrieve it from NPM and install the extension.
+
+## Prompts
+
+> If your app extension uses prompts, explain them here, otherwise remove this section.
+
+# Uninstall
+```bash
+quasar ext remove my-ext <- change name
 ```
+
+# Info
+> Add longer information here that will help the user of your app extension.
+
+# Other Info
+> Add other information that's not as important to know
+
+# Patreon
+If you like (and use) this App Extension, please consider becoming a Quasar [Patreon](https://www.patreon.com/quasarframework).

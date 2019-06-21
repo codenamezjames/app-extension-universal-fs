@@ -8,9 +8,8 @@
 const extendWithUniversalFs = function (api, conf) {
   // make sure there is a boot array
   conf.boot = conf.boot || []
-
-  if (!conf.boot.includes('~@quasar/quasar-app-extension-universal-fs/boot/universal-fs.js')) {
-    conf.boot.push('~@quasar/quasar-app-extension-universal-fs/boot/universal-fs.js')
+  if (!conf.boot.includes('~quasar-app-extension-universal-fs/src/boot/universal-fs.js')) {
+    conf.boot.push('~quasar-app-extension-universal-fs/src/boot/universal-fs.js')
     // make sure boot file transpiles
     conf.build.transpileDependencies.push(/quasar-app-extension-universal-fs[\\/]src[\\/]boot/)
     console.log(` App Extension (universal-fs) Info: 'Adding universal-fs boot reference to your quasar.conf.js'`)
