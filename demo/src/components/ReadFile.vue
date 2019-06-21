@@ -9,7 +9,7 @@
 export default {
   methods: {
     async openFile () {
-      const fileData = await this.$ufs.readFile('foo.tet', { encoding: 'utf8' })
+      const fileData = await this.$ufs.readFile('foo.txt', { encoding: 'utf8' })
       this.$q.notify({ message: `Text File Contains: "${fileData}"` })
     }
   }

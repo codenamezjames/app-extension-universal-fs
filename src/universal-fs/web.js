@@ -1,9 +1,10 @@
 import { writeFile as writeFileWeb, readFile as readFileWeb, readString, removeFile, mkdir, rmdir, readdir } from 'fs-web'
 
-const appendFile = async (filename, data, cb) => {
-  const fileData = await readFile(filename)
+const appendFile = async (filename, data) => {
+  const options = {encoding: 'utf8'}
+  const fileData = await readFile(filename, options)
   const newFileData = fileData + data
-  return writeFile(newFileData, data, cb)
+  return writeFile(filename, newFileData, options)
 }
 
 const readFile = (filename, options = {}) => {
