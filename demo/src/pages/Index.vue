@@ -1,6 +1,7 @@
 <template>
-  <q-page class="flex flex-center">
-    <binary-data />
+  <q-page class="column flex-center">
+    <binary-file />
+    <text-file />
   </q-page>
 </template>
 
@@ -8,11 +9,13 @@
 </style>
 
 <script>
-import binaryData from 'src/components/BinaryFile.vue'
+import binaryFile from 'src/components/BinaryFile.vue'
+import textFile from 'src/components/TextFile.vue'
 export default {
   name: 'PageIndex',
   components: {
-    binaryData
+    binaryFile,
+    textFile
   }
 }
 </script>
