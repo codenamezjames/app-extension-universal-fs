@@ -1,5 +1,5 @@
 import ufs from '../universal-fs'
 
-export default ({ Vue, app }) => {
-  Vue.prototype.$ufs = ufs
+export default async ({ Vue, app }) => {
+  Vue.prototype.$ufs = await ufs
 }

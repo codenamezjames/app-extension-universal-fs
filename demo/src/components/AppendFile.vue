@@ -2,7 +2,7 @@
   <div>
     <pre><code>var file = 'foo'
 const fileData = await that.$ufs.writeFile('foo.tet', file, { encoding: 'utf8' })</code></pre>
-    <q-btn color="primary" icon="save" label="Append File" @click="saveFile" />
+    <q-btn color="primary" label="Append To Text File" @click="saveFile" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     async saveFile () {
       const that = this
       var file = 'foo'
-      const fileData = await that.$ufs.appendFile('foo.txt', file)
+      const fileData = await that.$ufs.appendFile('/foo.txt', file)
 
       that.$q.notify({ message: `Appended Text File Contains: "${fileData}"` })
     }

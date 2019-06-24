@@ -2,7 +2,7 @@
   <div>
     <pre><code>var file = new File(['foo'], 'foo.txt', { type: 'text/plain' })
 const fileData = await that.$ufs.writeFile(file.name, file, { encoding: 'utf8' })</code></pre>
-    <q-btn color="primary" icon="save" label="Save File" @click="saveFile" />
+    <q-btn color="primary" label="Save Binary File" @click="saveFile" />
   </div>
 </template>
 
@@ -11,8 +11,8 @@ export default {
   methods: {
     async saveFile () {
       const that = this
-      var file = new File(['foo'], 'foo.txt', { type: 'text/plain' })
-      const fileData = await that.$ufs.writeFile(file.name, file, { encoding: 'utf8' })
+      var file = new File(['foo'], '/foo4.txt', { type: 'text/plain' })
+      const fileData = await that.$ufs.writeFile('foo4.txt', file)
 
       var reader = new FileReader()
       reader.readAsText(fileData, 'UTF-8')

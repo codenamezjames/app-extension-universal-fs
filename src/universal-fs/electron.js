@@ -1,4 +1,5 @@
 const fs = require('fs').promises
+import downloadFile from './downloadFile'
 
 const appendFile = fs.appendFile
 
@@ -14,12 +15,6 @@ const unlink = fs.unlink
 
 const writeFile = fs.writeFile
 
-export default {
-  appendFile,
-  mkdir,
-  readDir,
-  readFile,
-  rmDir,
-  unlink,
-  writeFile
-}
+export default new Promise((resolve, reject) => {
+  resolve({ appendFile, mkdir, readDir, readFile, rmDir, unlink, writeFile, downloadFile })
+})

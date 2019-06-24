@@ -1,3 +1,4 @@
+import downloadFile from './downloadFile'
 const deviceReady = () => {
   return new Promise((resolve, reject) => {
     document.addEventListener('deviceready', resolve(), false)
@@ -20,12 +21,7 @@ const writeFile = (file, data, options) => {
   console.log(file)
 }
 
-export default {
-  appendFile,
-  mkdir,
-  readDir,
-  readFile,
-  rmDir,
-  unlink,
-  writeFile
-}
+export default new Promise((resolve, reject) => {
+  resolve({ appendFile, mkdir, readDir, readFile, rmDir, unlink, writeFile, downloadFile })
+})
+
