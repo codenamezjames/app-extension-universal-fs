@@ -1,16 +1,15 @@
 <template>
   <div>
-    <q-btn color="primary" label="Open Text File" @click="openFile" />
+    <q-btn color="primary" label="Download Text File" @click="downloadFile" />
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    async openFile () {
+    async downloadFile () {
       const fileData = await this.$ufs.readFile(`${this.$ufs.cwd()}/text.txt`, { encoding: 'utf8' })
-      console.log(fileData)
-      this.$q.notify({ message: `Text File Contains: "${fileData}"` })
+      this.$ufs.downloadFile(fileData, 'NewFile.txt')
     }
   }
 }

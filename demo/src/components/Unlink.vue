@@ -1,17 +1,19 @@
 <template>
   <div>
-    <q-btn color="primary" label="Make And Read Directory" @click="mkdir" />
+    <q-btn color="primary" label="Unlink Text and Binary File" @click="unlink" />
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    async mkdir () {
+    async unlink () {
       try {
-        await this.$ufs.mkdir(`${this.$ufs.cwd()}/bar`)
-      } catch (e) { console.log(e) }
-
+        await this.$ufs.unlink(`${this.$ufs.cwd()}/text.txt`)
+      } catch (e) {}
+      try {
+        await this.$ufs.unlink(`${this.$ufs.cwd()}/binary.txt`)
+      } catch (e) {}
       const folderData = await this.$ufs.readdir('/')
 
       this.$q.notify({ message: `Directory: "${JSON.stringify(folderData, null, 2)}"` })

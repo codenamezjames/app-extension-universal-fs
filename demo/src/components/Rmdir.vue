@@ -1,16 +1,16 @@
 <template>
   <div>
-    <q-btn color="primary" label="Make And Read Directory" @click="mkdir" />
+    <q-btn color="primary" label="Remove Directory" @click="rmdir" />
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    async mkdir () {
+    async rmdir () {
       try {
-        await this.$ufs.mkdir(`${this.$ufs.cwd()}/bar`)
-      } catch (e) { console.log(e) }
+        await this.$ufs.rmdir(`${this.$ufs.cwd()}/bar`)
+      } catch (e) {}
 
       const folderData = await this.$ufs.readdir('/')
 

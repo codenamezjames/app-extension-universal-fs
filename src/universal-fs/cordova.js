@@ -1,4 +1,4 @@
-import downloadFile from './downloadFile'
+import * as shared from './shared'
 const deviceReady = () => {
   return new Promise((resolve, reject) => {
     document.addEventListener('deviceready', resolve(), false)
@@ -17,11 +17,15 @@ const rmDir = null
 
 const unlink = null
 
+const cwd = process.cwd()
+
 const writeFile = (file, data, options) => {
   console.log(file)
 }
 
 export default new Promise((resolve, reject) => {
-  resolve({ appendFile, mkdir, readDir, readFile, rmDir, unlink, writeFile, downloadFile })
+  return deviceReady().then(() => {
+    return resolve({ appendFile, mkdir, readDir, readFile, rmDir, unlink, writeFile, ...shared })
+  })
 })
 

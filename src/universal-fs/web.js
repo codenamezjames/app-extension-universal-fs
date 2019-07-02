@@ -1,4 +1,4 @@
-import downloadFile from './downloadFile'
+import * as shared from './shared'
 
 const customArgumentsToken = "__ES6-PROMISIFY--CUSTOM-ARGUMENTS__";
 function promisify(original) {
@@ -37,7 +37,7 @@ export default new Promise((resolve, reject) => {
         rmdir: promisify(rmdir),
         unlink: promisify(unlink),
         writeFile: promisify(writeFile),
-        downloadFile
+        ...shared
       }
       resolve(promiseFs)
   });
