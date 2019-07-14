@@ -8,8 +8,8 @@
 export default {
   methods: {
     async saveFile () {
-      await this.$ufs.appendFile(`${this.$ufs.cwd()}/text.txt`, 'foo')
-      const fileData = await this.$ufs.readFile(`${this.$ufs.cwd()}/text.txt`, { encoding: 'utf8' })
+      await this.$ufs.appendFile(`${this.$ufs.appDir()}/text.txt`, 'foo')
+      const fileData = await this.$ufs.readFile(`${this.$ufs.appDir()}/text.txt`, { encoding: 'utf8' })
 
       this.$q.notify({ message: `Appended Text File Contains: "${fileData}"` })
     }

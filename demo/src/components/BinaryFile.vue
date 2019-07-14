@@ -12,7 +12,7 @@ export default {
       var reader = new FileReader()
 
       reader.addEventListener('load', () => {
-        this.$ufs.writeFile(`${this.$ufs.cwd()}/binary.txt`, reader.result)
+        this.$ufs.writeFile(`${this.$ufs.appDir()}/text.txt`, reader.result)
         this.$q.notify({ message: `Binary File Contains: ${reader.result}` })
       }, false)
 

@@ -1,5 +1,6 @@
 <template>
   <q-page class="column justify-center q-px-md">
+    <q-card class="q-pa-md q-mb-lg"><init-directories /></q-card>
     <q-card class="q-pa-md q-mb-lg"><binary-file /></q-card>
     <q-card class="q-pa-md q-mb-lg"><write-file /></q-card>
     <q-card class="q-pa-md q-mb-lg"><append-file /></q-card>
@@ -15,6 +16,7 @@
 </style>
 
 <script>
+import initDirectories from 'src/components/InitDirectories.vue'
 import binaryFile from 'src/components/BinaryFile.vue'
 import writeFile from 'src/components/WriteFile.vue'
 import appendFile from 'src/components/AppendFile.vue'
@@ -26,6 +28,7 @@ import unlink from 'src/components/Unlink.vue'
 export default {
   name: 'PageIndex',
   components: {
+    initDirectories,
     binaryFile,
     writeFile,
     appendFile,

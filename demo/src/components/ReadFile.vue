@@ -8,7 +8,7 @@
 export default {
   methods: {
     async openFile () {
-      const fileData = await this.$ufs.readFile(`${this.$ufs.cwd()}/text.txt`, { encoding: 'utf8' })
+      const fileData = await this.$ufs.readFile(`${this.$ufs.appDir()}/text.txt`, { encoding: 'utf8' })
       console.log(fileData)
       this.$q.notify({ message: `Text File Contains: "${fileData}"` })
     }

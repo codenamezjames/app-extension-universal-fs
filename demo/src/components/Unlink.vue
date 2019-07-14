@@ -9,10 +9,10 @@ export default {
   methods: {
     async unlink () {
       try {
-        await this.$ufs.unlink(`${this.$ufs.cwd()}/text.txt`)
+        await this.$ufs.unlink(`${this.$ufs.appDir()}/text.txt`)
       } catch (e) {}
       try {
-        await this.$ufs.unlink(`${this.$ufs.cwd()}/binary.txt`)
+        await this.$ufs.unlink(`${this.$ufs.appDir()}/text.txt`)
       } catch (e) {}
       const folderData = await this.$ufs.readdir('/')
 

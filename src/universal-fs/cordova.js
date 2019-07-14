@@ -1,9 +1,11 @@
+import { Platform } from 'quasar'
 import * as shared from './shared'
 const deviceReady = () => {
   return new Promise((resolve, reject) => {
     document.addEventListener('deviceready', resolve(), false)
   })
 }
+const exportKey = 'Q_PUBLIC_EXPORT'
 
 const appendFile = null
 
@@ -17,10 +19,18 @@ const rmDir = null
 
 const unlink = null
 
-const cwd = process.cwd()
-
 const writeFile = (file, data, options) => {
-  console.log(file)
+  if (file === exportKey) shared.downloadFile(data, 'download')
+
+}
+
+const appDir = () => {
+  return cordova.file.applicationDirectory
+}
+
+const pubDir = () => {
+  if (Platform.is.ios) return exportKey
+  return cordova.file.externalDataDirectory
 }
 
 export default new Promise((resolve, reject) => {

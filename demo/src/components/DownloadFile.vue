@@ -8,7 +8,7 @@
 export default {
   methods: {
     async downloadFile () {
-      const fileData = await this.$ufs.readFile(`${this.$ufs.cwd()}/text.txt`, { encoding: 'utf8' })
+      const fileData = await this.$ufs.readFile(`${this.$ufs.appDir()}/text.txt`, { encoding: 'utf8' })
       this.$ufs.downloadFile(fileData, 'NewFile.txt')
     }
   }

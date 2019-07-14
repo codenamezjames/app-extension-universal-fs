@@ -8,7 +8,7 @@
 export default {
   methods: {
     async writeFile () {
-      await this.$ufs.writeFile(`${this.$ufs.cwd()}/text.txt`, 'foo', { encoding: 'utf8' })
+      await this.$ufs.writeFile(`${this.$ufs.appDir()}/text.txt`, 'foo', { encoding: 'utf8' })
       this.$q.notify({ message: `Text File Contains: "foo"` })
     }
   }

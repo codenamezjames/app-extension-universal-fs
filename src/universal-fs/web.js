@@ -37,6 +37,8 @@ export default new Promise((resolve, reject) => {
         rmdir: promisify(rmdir),
         unlink: promisify(unlink),
         writeFile: promisify(writeFile),
+        appDir (){ return `${shared.cwd()}app/` },
+        pubDir (){ return `${shared.cwd()}pub/` },
         ...shared
       }
       resolve(promiseFs)
